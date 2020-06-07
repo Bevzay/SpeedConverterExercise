@@ -13,12 +13,12 @@ public class SpeedConverter {
      */
 
     public static long toMilesPerHour(double kilometresPerHour) {
-        double miles = kilometresPerHour*1.6093;
+        double miles = kilometresPerHour / 1.609;
 
         if (kilometresPerHour < 0) {
             return -1;
         } else {
-            return (long) miles;
+            return Math.round((long) miles);
         }
     }
 
@@ -36,6 +36,14 @@ public class SpeedConverter {
     * If the parameter kilometresPerHour is < 0 then print the text "Invalid Value"
      */
 
+    public static void printConversion(double kilometresPerHour) {
 
+        if (kilometresPerHour < 0) {
+            System.out.println("Invalid Value");
+        } else {
+            System.out.println(kilometresPerHour + " km/h = " + toMilesPerHour(kilometresPerHour) + " mi/h");
+        }
+
+    }
 
 }
