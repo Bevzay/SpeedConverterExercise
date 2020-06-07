@@ -12,6 +12,14 @@ public class SpeedConverter {
     * If it is positive, calculate the value of miles per hour, round it and return it.
      */
 
-    
+    public static long toMilesPerHour(double kilometresPerHour) {
+        double miles = kilometresPerHour*1.6093;
+
+        if (kilometresPerHour < 0) {
+            return -1;
+        } else {
+            return (long) miles;
+        }
+    }
 
 }
